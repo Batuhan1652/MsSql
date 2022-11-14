@@ -1,28 +1,28 @@
--- Mağazaların Müşteri Sayısını Hesaplama --
+-- MaÄŸazalarÄ±n MÃ¼ÅŸteri SayÄ±sÄ±nÄ± Hesaplama --
 
 select BRANCH ,count(DISTINCT CLIENTNAME) from SALES
 group by BRANCH
 
--- Peki 1 müşteri hem bursa hem balıkesir  şubesinden alışveriş yaptı ise ve ismi 2 kere yazdıldı ise?? --
+-- Peki 1 mÃ¼ÅŸteri hem bursa hem balÄ±kesir  ÅŸubesinden alÄ±ÅŸveriÅŸ yaptÄ± ise ve ismi 2 kere yazdÄ±ldÄ± ise?? --
 
 select CLIENTNAME ,count(DISTINCT BRANCH) from SALES
-group by CLIENTNAME -- bu kod bıze bır müşterinin kaç tane farklı mağazaya gittiğini gösteriyor--
+group by CLIENTNAME -- bu kod bÄ±ze bÄ±r mÃ¼ÅŸterinin kaÃ§ tane farklÄ± maÄŸazaya gittiÄŸini gÃ¶steriyor--
 
 select DISTINCT BRANCH from SALES
-where CLIENTNAME = 'Abdulkadir AĞZIKÜÇIK' -- bu kod bize andülkadirin tr'de hangi mağazalara gittiğnin gösteriyorr --
+where CLIENTNAME = 'Abdulkadir AÄZIKÃœÃ‡IK' -- bu kod bize abdÃ¼lkadirin tr'de hangi maÄŸazalara gitiÄŸini gÃ¶steriyor --
 
 select CLIENTNAME ,count(DISTINCT BRANCH) from SALES
-where CLIENTNAME = 'Abdulkadir AĞZIKÜÇIK'
-group by CLIENTNAME -- bu kod sadece abdülkadirin kaç tane mağazaya gittiğnii söylüyor --
+where CLIENTNAME = 'Abdulkadir AÄZIKÃœÃ‡IK'
+group by CLIENTNAME -- bu kod sadece abdÃ¼lkadirin kaÃ§ tane maÄŸazaya gittiÄŸnii sÃ¶ylÃ¼yor --
 
--- 5'den fazla magazaya giden müşerileri sorgulama --
+-- 5'den fazla magazaya giden mÃ¼ÅŸerileri sorgulama --
 
 select CLIENTNAME ,count(DISTINCT BRANCH) from SALES
 group by CLIENTNAME 
 HAVING COUNT(DISTINCT BRANCH) > 5 
 
--- bu arada önemli not aggrigate komutyları varken where değil having kullanılır benim öneki yazdığım gibi her group by'a having kullanmak zorudna
---değilsin 
+-- bu arada Ã¶nemli not aggrigate komutylarÄ± varken where deÄŸil having kullanÄ±lÄ±r benim Ã¶neki yazdÄ±ÄŸÄ±m gibi her group by'a having kullanmak zorunda
+--deÄŸilsin 
 
 
 

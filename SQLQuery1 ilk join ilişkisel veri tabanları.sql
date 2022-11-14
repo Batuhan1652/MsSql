@@ -5,7 +5,7 @@ join ADDRES on ADDRES.USERID = USER_.ID
 where USER_.ID = '1'
 
 
--- LEFT, RÝGHT, FULL JOIN --
+-- LEFT, RIGHT, FULL JOIN --
 
 delete from ADDRES where ADDRES.ID = 102
 
@@ -51,7 +51,7 @@ LEFT JOIN ADDRES on ADDRES.USERID = USER_.ID
 where USER_.ID in (101,102,103)
 
 
--- Alias ( KIsaltmalar, Nick Name Kullanýmý ) --
+-- Alias ( KIsaltmalar, Nick Name Kullanilma ) --
 select * from USER_
 select * from ADDRES
 select * from TOWN

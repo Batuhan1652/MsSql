@@ -6,5 +6,5 @@ Set Age= DATEDIFF(Year,Birth_Date,GETDATE())
 Update Customers_Tables Set Age= Age+1
 Update Customers_Tables Set Age= Age-1
 
-/* Yukarıdaki set age komutuyla müşterielrin  yaşlarını hesapladık. Age columu boştu ve biz bu columa şu komutu verdik yaşı şimdigi günümüz
-tarihinden birt_Date'yi çıkararak hesapla ve bu sayede tüm müşerilerin yaşarı hesaplandı*/
+/* YukarÄ±daki set age komutuyla mÃ¼ÅŸterielrin  yaÅŸlarÄ±nÄ± hesapladÄ±k. Age columu boÅŸtu ve biz bu columa ÅŸu komutu verdik yaÅŸÄ± ÅŸimdiki gÃ¼nÃ¼mÃ¼z
+tarihinden Birth_Date'yi Ã§Ä±kararak hesapla ve bu sayede tÃ¼m mÃ¼ÅŸerilerin yaÅŸlarÄ± hesaplandÄ±*/

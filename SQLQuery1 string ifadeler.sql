@@ -1,7 +1,7 @@
--- STRİNG FONKSİYONLAR --
+-- STRÄ°NG FONKSÄ°YONLAR --
 
--- ASCII VE CHAR FONKSİYONU--
--- ASCII BİZE HARF VE RAKAMLARIN ASCII DEĞERİNİ VERİRKEN CHAR İSE ASCII DEĞERİNİ YAZDIĞIMIZ HARF VEYA RAKAM HALİNİ VERİR
+-- ASCII VE CHAR FONKSÄ°YONU--
+-- ASCII BÄ°ZE HARF VE RAKAMLARIN ASCII DEÄERÄ°NÄ° VERÄ°RKEN CHAR Ä°SE ASCII DEÄERÄ°NÄ° YAZDIÄIMIZ HARF VEYA RAKAM HALÄ°NÄ° VERÄ°R
 select ASCII('A')
 
 select CHAR(65)
@@ -12,41 +12,41 @@ select ASCII(CHAR(49))
 
 select CHAR(49)
 
--- SUBSTRİNG--
--- BİR STRİNG İFADEDE BİR NOKTADAN BAŞLAYIP NEREYE KADAR ALACAĞIMIZA YARAYAN FONKSİYON
+-- SUBSTRÄ°NG--
+-- BÄ°R STRÄ°NG Ä°FADEDE BÄ°R NOKTADAN BAÅLAYIP NEREYE KADAR ALACAÄIMIZA YARAYAN FONKSÄ°YON
 
-select SUBSTRING('Batuhan Metin',1,7) -- Bu kodda çıktı Batuhan olur çünkü 1.karakterden 7. karaktere kadar al dedik
--- 1.karakter B ve 7. karakter n bu yüzden çıktı Batuhan olur
+select SUBSTRING('Batuhan Metin',1,7) -- Bu kodda Ã§Ä±ktÄ± Batuhan olur Ã§Ã¼nkÃ¼ 1.karakterden 7. karaktere kadar al dedik
+-- 1.karakter B ve 7. karakter n bu yÃ¼zden Ã§Ä±ktÄ± Batuhan olur
 
--- CHAR İNDEKS--
--- Bir string ifade'nin içinde başka bir string ifade aramaya yarar
+-- CHAR Ä°NDEKS--
+-- Bir string ifade'nin iÃ§inde baÅŸka bir string ifade aramaya yarar
 
-select CHARINDEX ('Batuhan', 'Batuhan Metin',1) -- ilk virgül neyin aranacağı yani Batuhanı arayacağız 2.kısım nerden arayacağız
--- yani batuhan metin'de arayacağız 3.kısım hangi indexten başlanacak yani 1.index ile başla Batuhan Metin'in B sinden 2 desen a dan başlar
+select CHARINDEX ('Batuhan', 'Batuhan Metin',1) -- ilk virgÃ¼l neyin aranacaÄŸÄ± yani BatuhanÄ± arayacaÄŸÄ±z 2.kÄ±sÄ±m nerden arayacaÄŸÄ±z
+-- yani batuhan metin'de arayacaÄŸÄ±z 3.kÄ±sÄ±m hangi indexten baÅŸlanacak yani 1.index ile baÅŸla Batuhan Metin'in B sinden 2 desen a dan baÅŸlar
 select CHARINDEX ('n', 'Batuhan Metin',1)
 
 -- CONCAT KOMUTU--
--- 2 veya daha fazla string ifadeyi birleştirmeye yarar--
+-- 2 veya daha fazla string ifadeyi birleÅŸtirmeye yarar--
 
-select CONCAT_WS(' ','Batuhan','Metin','Bursa','Nilüfer')
+select CONCAT_WS(' ','Batuhan','Metin','Bursa','NilÃ¼fer')
 
---peki concat tablolarda nasl çalışır
+--peki concat tablolarda nasl Ã§alÄ±ÅŸÄ±r
 
 select CONCAT_WS(' ', USER_.USERNAME_, USER_.NAMESURNAME, USER_.EMAIL, USER_.PASSWORD_) from USER_
 
 select CONCAT_WS(' ', USER_.USERNAME_, USER_.NAMESURNAME, USER_.EMAIL, USER_.PASSWORD_), * from USER_
 
--- FORMAT FONKSİYONU--
--- SAYI YADA TARİH TÜRÜNDEKİ DEĞERLERİ LOKAL OLARAK İSTEDİĞİMİZ DİLDE YAZDIRMAMIZI SAĞLAR--
--- GETDATE() bugünün tarihini getirir
-select FORMAT(GETDATE(),'d','tr') -- küçük d ile yazarsak sadece sayı getirir yani 03/09/2022
-select FORMAT(GETDATE(),'D','tr') -- fakat böyle yazarsak 3 Eylül 2022 Cumartesi yazar
-select FORMAT(GETDATE(),'D','en') -- İngilizce hali
-select FORMAT(GETDATE(),'D','zh-cn') -- Çince hali
+-- FORMAT FONKSÄ°YONU--
+-- SAYI YADA TARÄ°H TÃœRÃœNDEKÄ° DEÄERLERÄ° LOKAL OLARAK Ä°STEDÄ°ÄÄ°MÄ°Z DÄ°LDE YAZDIRMAMIZI SAÄLAR--
+-- GETDATE() bugÃ¼nÃ¼n tarihini getirir
+select FORMAT(GETDATE(),'d','tr') -- kÃ¼Ã§Ã¼k d ile yazarsak sadece sayÄ± getirir yani 03/09/2022
+select FORMAT(GETDATE(),'D','tr') -- fakat bÃ¶yle yazarsak 3 EylÃ¼l 2022 Cumartesi yazar
+select FORMAT(GETDATE(),'D','en') -- Ä°ngilizce hali
+select FORMAT(GETDATE(),'D','zh-cn') -- Ã‡ince hali
 
--- LEFT, RİGHT, LEN FONKSİYONU--
--- LEFT VE RİGHT BİR STRİNGİN SAĞDAN VEYA SOLDAN VERDİĞİMİZ DEĞERE GÖRE BİZE GÖSTERİR LEFT 4 DERSEK SOLDAN 4 KARAKTERİ BİZE GÖSTERİR
--- LEN İSE BİR STRİNGİN UZUNLUĞUNU ALIR
+-- LEFT, RÄ°GHT, LEN FONKSÄ°YONU--
+-- LEFT VE RÄ°GHT BÄ°R STRÄ°NGÄ°N SAÄDAN VEYA SOLDAN VERDÄ°ÄÄ°MÄ°Z DEÄERE GÃ–RE BÄ°ZE GÃ–STERÄ°R LEFT 4 DERSEK SOLDAN 4 KARAKTERÄ° BÄ°ZE GÃ–STERÄ°R
+-- LEN Ä°SE BÄ°R STRÄ°NGÄ°N UZUNLUÄUNU ALIR
 
 select LEFT('Batuhan Metin',7)
 select RIGHT('Batuhan Metin',5)
@@ -57,82 +57,81 @@ select LEFT('Batuhan Metin', CHARINDEX(' ','Batuhan Metin')),RIGHT('Batuhan Meti
 
 select LEFT(NAMESURNAME, CHARINDEX(' ',NAMESURNAME)),RIGHT(NAMESURNAME, LEN(NAMESURNAME)-CHARINDEX(' ',NAMESURNAME)) 
 from USER_
--- Yukarıdaki kod ile tüm kullanıcıların ismi ve soyismini ayrı ayrı yazdırdık
+-- YukarÄ±daki kod ile tÃ¼m kullanÄ±cÄ±larÄ±n ismi ve soyismini ayrÄ± ayrÄ± yazdÄ±rdÄ±k
 
---TRIM, RTRIM, LTRIM ( RTİRM RİGHT TRİM L LEFT TRİM )
--- Boşlukları silmeye yarıyor
+--TRIM, RTRIM, LTRIM ( RTÄ°RM RÄ°GHT TRÄ°M L LEFT TRÄ°M )
+-- BoÅŸluklarÄ± silmeye yarÄ±yor
 
 select RTRIM(LTRIM(' Batuhan Metin '))
 
--- LOWER, UPPER, REVERSE, REPLİCATE FONKSİYONLARI
+-- LOWER, UPPER, REVERSE, REPLÄ°CATE FONKSÄ°YONLARI
 
 select LOWER('BATHAN')
 select UPPER('batuhan')
-select REVERSE('batuhan') -- tersten yazıyor nahutab yazar
+select REVERSE('batuhan') -- tersten yazÄ±yor nahutab yazar
 select REPLICATE(0,10) -- 10 tane 0 yazar 
 
 
 
-select *,REPLICATE('0',8-LEN(SIRANO))+CONVERT(VARCHAR,sırano) from TEST
+select *,REPLICATE('0',8-LEN(SIRANO))+CONVERT(VARCHAR,sÄ±rano) from TEST
 UPDATE TEST set SIRANO2= REPLICATE('0',8-LEN(SIRANO))+CONVERT(VARCHAR,SIRANO)
 
 select * from TEST
 
 
--- REPLACE  BİR ŞEY İLE BİR ŞEYİ YER DEĞİŞTİREN FONKSİYONDUR--
+-- REPLACE  BÄ°R ÅEY Ä°LE BÄ°R ÅEYÄ° YER DEÄÄ°ÅTÄ°REN FONKSÄ°YONDUR--
 
 select 'Batuhan Metin'
 
-select REPLACE('Batuhan Metin', 'Batuhan', 'Zeka Küpü')  -- çıktısı Zeka Küpü Metin olur replace mantığı ilk virgül
--- değişken, ikinci virgül değişecek nesne, üçüncü virgül ise ne ile değişeceği
+select REPLACE('Batuhan Metin', 'Batuhan', 'Zeka KÃ¼pÃ¼')  -- Ã§Ä±ktÄ±sÄ± Zeka KÃ¼pÃ¼ Metin olur replace mantÄ±ÄŸÄ± ilk virgÃ¼l
+-- deÄŸiÅŸken, ikinci virgÃ¼l deÄŸiÅŸecek nesne, Ã¼Ã§Ã¼ncÃ¼ virgÃ¼l ise ne ile deÄŸiÅŸeceÄŸi
 
---SQL ile değişken atama --
+--SQL ile deÄŸiÅŸken atama --
 
-'Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. 
-Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. 
-Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. 
-Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. 
-Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+'Harut MarutAllah tarafÄ±ndan Babilâ€™e gÃ¶nderilen iki melektir. Onlar gÃ¶revleri ise insanlara bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmektir. 
+BÃ¼yÃ¼ Ã¶ÄŸrenmek isteyen kiÅŸilere ise Ã¶ncelikli olarak bunun karÅŸÄ±lÄ±ÄŸÄ±nda cehenneme gideceklerini sÃ¶yleyen Harut ve Marut yalnÄ±zca bunu kabul etmeleri Ã¼zerine bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmekteydi. 
+Cehennemi kabul eden birÃ§ok insan onlarÄ±n Ã¶ÄŸretmiÅŸ olduÄŸu bÃ¼yÃ¼yÃ¼ yaparak kendilerini lanetlediler. 
+BazÄ± anlatÄ±mlara gÃ¶re Harut ve Marut aslÄ±nda insanÄ±n nefsi olarak gÃ¶nderilmiÅŸti. 
+Bu duruma dair farklÄ± rivayetler bulunmakla birlikte anlatÄ±lan bir hikÃ¢yede ise Harut veMarut aralarÄ±nda sohbet etmekte olan iki melek olarak belirtilmektedir.
 
-Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. 
-Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. 
-Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  
-Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. 
-Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. 
-Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. 
-Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.'
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratÄ±lmÄ±ÅŸ olsalardÄ± sÃ¼rekli ibadet ile gÃ¼nlerini geÃ§irecek olduklarÄ±nÄ± belirtmiÅŸlerdir. 
+Bunun Ã¼zerine ise Allah Onlara ÅŸehvet duygusunu verdiÄŸinde insanlardan Ã§ok daha fazla gÃ¼nah iÅŸleyeceklerini belirtmiÅŸtir. 
+Fakat ne olursa olsun bu iki melek kendilerine sonsuz gÃ¼ven duyuyorlarmÄ±ÅŸ.  
+Bunun Ã¼zerine ise istedikleri gibi Allah onlara ÅŸehvet duygusunu vermiÅŸ ve daha sonrasÄ±nda ise onlarÄ± dÃ¼nya Ã¼zerine gÃ¶ndermiÅŸ. 
+DÃ¼nyaya inen Harut ve Marut bir kadÄ±n gÃ¶rmÃ¼ÅŸler. KadÄ±n ile birlikte olmayÄ± istemeleri Ã¼zerine ise kadÄ±n onlara Ã¼Ã§ seÃ§enek sunarak bunlardan birini yaptÄ±ÄŸÄ±nÄ±z takdirde sizinle birlikte olurum demiÅŸ. 
+Bu Ã¼Ã§ seÃ§enekten biri kocasÄ±nÄ± Ã¶ldÃ¼rmek iken diÄŸeri puta tapmak ve bir diÄŸeri ise ÅŸarap iÃ§mekmiÅŸ. 
+Harut ve Marut ise Ã¼Ã§Ã¼ncÃ¼ seÃ§enek olan ÅŸarap iÃ§meyi tercih etmiÅŸler.'
 
-DECLARE @CUMLE as VARCHAR(max) = 'Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. 
-Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. 
-Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. 
-Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. 
-Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+DECLARE @CUMLE as VARCHAR(max) = 'Harut MarutAllah tarafÄ±ndan Babilâ€™e gÃ¶nderilen iki melektir. Onlar gÃ¶revleri ise insanlara bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmektir. 
+BÃ¼yÃ¼ Ã¶ÄŸrenmek isteyen kiÅŸilere ise Ã¶ncelikli olarak bunun karÅŸÄ±lÄ±ÄŸÄ±nda cehenneme gideceklerini sÃ¶yleyen Harut ve Marut yalnÄ±zca bunu kabul etmeleri Ã¼zerine bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmekteydi. 
+Cehennemi kabul eden birÃ§ok insan onlarÄ±n Ã¶ÄŸretmiÅŸ olduÄŸu bÃ¼yÃ¼yÃ¼ yaparak kendilerini lanetlediler. 
+BazÄ± anlatÄ±mlara gÃ¶re Harut ve Marut aslÄ±nda insanÄ±n nefsi olarak gÃ¶nderilmiÅŸti. 
+Bu duruma dair farklÄ± rivayetler bulunmakla birlikte anlatÄ±lan bir hikÃ¢yede ise Harut veMarut aralarÄ±nda sohbet etmekte olan iki melek olarak belirtilmektedir.
 
-Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. 
-Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. 
-Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  
-Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. 
-Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. 
-Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. 
-Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.'
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratÄ±lmÄ±ÅŸ olsalardÄ± sÃ¼rekli ibadet ile gÃ¼nlerini geÃ§irecek olduklarÄ±nÄ± belirtmiÅŸlerdir. 
+Bunun Ã¼zerine ise Allah Onlara ÅŸehvet duygusunu verdiÄŸinde insanlardan Ã§ok daha fazla gÃ¼nah iÅŸleyeceklerini belirtmiÅŸtir. 
+Fakat ne olursa olsun bu iki melek kendilerine sonsuz gÃ¼ven duyuyorlarmÄ±ÅŸ.  
+Bunun Ã¼zerine ise istedikleri gibi Allah onlara ÅŸehvet duygusunu vermiÅŸ ve daha sonrasÄ±nda ise onlarÄ± dÃ¼nya Ã¼zerine gÃ¶ndermiÅŸ. 
+DÃ¼nyaya inen Harut ve Marut bir kadÄ±n gÃ¶rmÃ¼ÅŸler. KadÄ±n ile birlikte olmayÄ± istemeleri Ã¼zerine ise kadÄ±n onlara Ã¼Ã§ seÃ§enek sunarak bunlardan birini yaptÄ±ÄŸÄ±nÄ±z takdirde sizinle birlikte olurum demiÅŸ. 
+Bu Ã¼Ã§ seÃ§enekten biri kocasÄ±nÄ± Ã¶ldÃ¼rmek iken diÄŸeri puta tapmak ve bir diÄŸeri ise ÅŸarap iÃ§mekmiÅŸ. 
+Harut ve Marut ise Ã¼Ã§Ã¼ncÃ¼ seÃ§enek olan ÅŸarap iÃ§meyi tercih etmiÅŸler.'
 
 
-set @CUMLE = 'Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. 
-Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. 
-Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. 
-Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. 
-Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+set @CUMLE = 'Harut MarutAllah tarafÄ±ndan Babilâ€™e gÃ¶nderilen iki melektir. Onlar gÃ¶revleri ise insanlara bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmektir. 
+BÃ¼yÃ¼ Ã¶ÄŸrenmek isteyen kiÅŸilere ise Ã¶ncelikli olarak bunun karÅŸÄ±lÄ±ÄŸÄ±nda cehenneme gideceklerini sÃ¶yleyen Harut ve Marut yalnÄ±zca bunu kabul etmeleri Ã¼zerine bÃ¼yÃ¼yÃ¼ Ã¶ÄŸretmekteydi. 
+Cehennemi kabul eden birÃ§ok insan onlarÄ±n Ã¶ÄŸretmiÅŸ olduÄŸu bÃ¼yÃ¼yÃ¼ yaparak kendilerini lanetlediler. 
+BazÄ± anlatÄ±mlara gÃ¶re Harut ve Marut aslÄ±nda insanÄ±n nefsi olarak gÃ¶nderilmiÅŸti. 
+Bu duruma dair farklÄ± rivayetler bulunmakla birlikte anlatÄ±lan bir hikÃ¢yede ise Harut veMarut aralarÄ±nda sohbet etmekte olan iki melek olarak belirtilmektedir.
 
-Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. 
-Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. 
-Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  
-Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. 
-Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. 
-Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. 
-Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.'
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratÄ±lmÄ±ÅŸ olsalardÄ± sÃ¼rekli ibadet ile gÃ¼nlerini geÃ§irecek olduklarÄ±nÄ± belirtmiÅŸlerdir. 
+Bunun Ã¼zerine ise Allah Onlara ÅŸehvet duygusunu verdiÄŸinde insanlardan Ã§ok daha fazla gÃ¼nah iÅŸleyeceklerini belirtmiÅŸtir. 
+Fakat ne olursa olsun bu iki melek kendilerine sonsuz gÃ¼ven duyuyorlarmÄ±ÅŸ.  
+Bunun Ã¼zerine ise istedikleri gibi Allah onlara ÅŸehvet duygusunu vermiÅŸ ve daha sonrasÄ±nda ise onlarÄ± dÃ¼nya Ã¼zerine gÃ¶ndermiÅŸ. 
+DÃ¼nyaya inen Harut ve Marut bir kadÄ±n gÃ¶rmÃ¼ÅŸler. KadÄ±n ile birlikte olmayÄ± istemeleri Ã¼zerine ise kadÄ±n onlara Ã¼Ã§ seÃ§enek sunarak bunlardan birini yaptÄ±ÄŸÄ±nÄ±z takdirde sizinle birlikte olurum demiÅŸ. 
+Bu Ã¼Ã§ seÃ§enekten biri kocasÄ±nÄ± Ã¶ldÃ¼rmek iken diÄŸeri puta tapmak ve bir diÄŸeri ise ÅŸarap iÃ§mekmiÅŸ. 
+Harut ve Marut ise Ã¼Ã§Ã¼ncÃ¼ seÃ§enek olan ÅŸarap iÃ§meyi tercih etmiÅŸler.'
 set @CUMLE = REPLACE (@CUMLE,'Harut','Batuhan')
-select @CUMLE
--- şimdi şunu yaptık ik defa sql de değişken atama yaptık fakat sorun şu ki 
+select @CUMLE 
 
 DECLARE @SAYI as int
 
@@ -147,6 +146,6 @@ declare @TEST as varchar(max)
 
 print @TEST
 
-set @TEST = ' aslmgslşdmgsldmgslşdmgdslmgslşgmsldsdg' 
+set @TEST = ' aslmgslÅŸdmgsldmgslÅŸdmgdslmgslÅŸgmsldsdg' 
 
 select @TEST

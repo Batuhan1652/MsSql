@@ -1,22 +1,22 @@
-select * from Customers_Tables where City = 'İstanbul'
+select * from Customers_Tables where City = 'Ä°stanbul'
 
-select * from Customers_Tables where Customer_Name like 'Hüseyin%'
+select * from Customers_Tables where Customer_Name like 'HÃ¼seyin%'
 
-select * from Customers_Tables where City = 'İstanbul'  and Customer_Name like 'Hüseyin%'
+select * from Customers_Tables where City = 'Ä°stanbul'  and Customer_Name like 'HÃ¼seyin%'
 
-select * from Customers_Tables where City = 'İstanbul'  or Customer_Name like 'Hüseyin%'
+select * from Customers_Tables where City = 'Ä°stanbul'  or Customer_Name like 'HÃ¼seyin%'
 
-/* and dersen 2 şartıda sağlayanları getirir fakat or dersen şartlardan birine bile sağlasa getirir o yüzden and dediğimizde hem istanbulda
-yaşıcak hem de ismi Hüseyin olucak fakat ''or'' dediğimizde istanbulda yaşıyan hüseyinleri ve aynı zamanda adı hüseyin olan herkezi getiricek */
+/* and dersen 2 ÅŸartÄ±da saÄŸlayanlarÄ± getirir fakat or dersen ÅŸartlardan birine bile saÄŸlasa getirir o yÃ¼zden and dediÄŸimizde hem istanbulda
+yaÅŸÄ±cak hem de ismi HÃ¼seyin olucak fakat ''or'' dediÄŸimizde istanbulda yaÅŸÄ±yan hÃ¼seyinleri ve aynÄ± zamanda adÄ± hÃ¼seyin olan herkezi getiricek */
 
 
-select City from Customers_Tables  /* Şimdi bböyle yaptığımızda bize 1005 değer getirdi çünkü tekrarlayan verilerin hepsini aldı yani 1005 kere şehir
-indexi girilmiş dedi*/
+select City from Customers_Tables  /* Åimdi bbÃ¶yle yaptÄ±ÄŸÄ±mÄ±zda bize 1005 deÄŸer getirdi Ã§Ã¼nkÃ¼ tekrarlayan verilerin hepsini aldÄ± yani 1005 kere ÅŸehir
+indexi girilmiÅŸ dedi*/
 
-select  DISTINCT City from Customers_Tables /* Fakat böyle yaptığımızda hiçbirini almadı çünkü tekrarlayan verileri almadı yani 30 kere istanbul şehri varsa onu 1
-tane olarak aldı ve il sayısı 81 oldu */
+select  DISTINCT City from Customers_Tables /* Fakat bÃ¶yle yaptÄ±ÄŸÄ±mÄ±zda hiÃ§birini almadÄ± Ã§Ã¼nkÃ¼ tekrarlayan verileri almadÄ± yani 30 kere istanbul ÅŸehri varsa onu 1
+tane olarak aldÄ± ve il sayÄ±sÄ± 81 oldu */
 
-select DISTINCT City, District from Customers_Tables where City = 'İstanbul' /* Burda da yaptığı şey istanbul'u aldı ve ilçelerini de 1'er kere aldı yani
-2 tane istanbul kadıköyden müşteri varsa onu 1 kere aldı vve toplamda 22 sütun var bu demekki istanbulda 22 ilçe de müşterimiz var fakat bu şu demek değil
-istanbuld toplam 22 müşterimiz var */
+select DISTINCT City, District from Customers_Tables where City = 'Ä°stanbul' /* Burda da yaptÄ±ÄŸÄ± ÅŸey istanbul'u aldÄ± ve ilÃ§elerini de 1'er kere aldÄ± yani
+2 tane istanbul kadÄ±kÃ¶yden mÃ¼ÅŸteri varsa onu 1 kere aldÄ± ve toplamda 22 sÃ¼tun var bu demekki istanbulda 22 ilÃ§e de mÃ¼ÅŸterimiz var fakat bu ÅŸu demek deÄŸil
+istanbul'da toplam 22 mÃ¼ÅŸterimiz var */
 

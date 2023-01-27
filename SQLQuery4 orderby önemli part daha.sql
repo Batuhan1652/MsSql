@@ -3,7 +3,7 @@
 select BRANCH ,count(DISTINCT CLIENTNAME) from SALES
 group by BRANCH
 
--- Peki 1 müşteri hem bursa hem balıkesir  şubesinden alışveriş yaptı ise ve ismi 2 kere yazdıldı ise?? --
+-- Aynı Müşterinin 2 farklı şubeden alışveriş yaptığı senaryo --
 
 select CLIENTNAME ,count(DISTINCT BRANCH) from SALES
 group by CLIENTNAME -- bu kod bıze bır müşterinin kaç tane farklı mağazaya gittiğini gösteriyor--
@@ -21,8 +21,8 @@ select CLIENTNAME ,count(DISTINCT BRANCH) from SALES
 group by CLIENTNAME 
 HAVING COUNT(DISTINCT BRANCH) > 5 
 
--- bu arada önemli not aggrigate komutyları varken where değil having kullanılır benim öneki yazdığım gibi her group by'a having kullanmak zorunda
---değilsin 
+--önemli not aggrigate komutları varken where değil having kullanılır!
+--
 
 
 

@@ -4,7 +4,7 @@ group by BRANCH order by SUM(LINENET) desc
 select top 10 BRANCH as 'Sube_adi', SUM(LINENET) as 'Toplam_Satis' from SALES
 group by BRANCH order by SUM(LINENET) desc
 
--- Toplam satışı 50 binden büyük olan mağazalar
+-- Toplam satÄ±ÅŸÄ± 50 binden bÃ¼yÃ¼k olan maÃ°azalar
 
 select SUM(LINENET) as 'Toplam_Stis', BRANCH as 'Sube_Adi' from SALES
 group by BRANCH 
@@ -12,32 +12,32 @@ Having sum(LINENET) > 50000
 order by Toplam_Stis desc
 
 
--- ÖNEMLİ NOT!!!!! Eğer group by kullanıyorsan where yerine having kullanmak zorundasın!!!!!!!!!!!!!!!!! --
+-- Group by komutu kullanÄ±yorsan where deÄŸil vanig komutu kullanmak zorundayÄ±z --
 
--- Bir Mağazanın günlük satışını bulma--
+-- Bir MaÄŸazanÄ±n gÃ¼nlÃ¼k satÄ±ÅŸÄ±nÄ± bulma--
 
-select sum(LINENET) as Satis_Toplami, DATE_ as Tarih, BRANCH as Sube_İsmi, COUNT(*) as Satir_Sayisi
+select sum(LINENET) as Satis_Toplami, DATE_ as Tarih, BRANCH as Sube_Ãsmi, COUNT(*) as Satir_Sayisi
 from SALES
 where BRANCH = 'Bursa Subesi' and DATE_ = '2017-01-05'
 group by BRANCH, DATE_
 order by DATE_
 
--- Bir mağaza zincirinin türkiye genelinde günlük satış sayısı --
+-- Bir maÄŸazaa zincirinin TÃ¼rkiye genelinde gÃ¼nlÃ¼k satÄ±ÅŸ sayÄ±sÄ± --
 
-select sum(LINENET) as Satis_Toplami, DATE_ as Tarih, BRANCH as Sube_İsmi, COUNT(*) as Satir_Sayisi
+select sum(LINENET) as Satis_Toplami, DATE_ as Tarih, BRANCH as Sube_Ãsmi, COUNT(*) as Satir_Sayisi
 from SALES
 --where BRANCH = 'Bursa Subesi' and DATE_ = '2017-01-05'
 group by BRANCH, DATE_
 order by BRANCH, DATE_
 
--- Bir günün mağaza bazlı satış rakamı --
+-- Bir gÃ¼nÃ¼n maÄŸaza bazlÄ± satÄ±ÅŸ sayÄ±sÄ± --
 
 select BRANCH as sube, DATE_ as tarih, sum(LINENET) as satis from SALES
 where DATE_ = '01-02-2017'
 group by DATE_,BRANCH
 order by satis desc
 
--- Türkiye geneli mağazaların satışları günden güne -- 
+-- TÃ¼rkiye geneli maÄŸazalarÄ±n satÄ±ÅŸlarÄ± gÃ¼nden gÃ¼ne -- 
 select BRANCH as sube, DATE_ as tarih, sum(LINENET) as satis from SALES
 --where DATE_ = '01-02-2017'
 group by DATE_,BRANCH
